@@ -28,7 +28,7 @@ class ProductService
 
         $savedProducts = [];
         foreach ($products as $product) {
-            $savedProduct = Product::query()->create([
+            $savedProduct = Product::query()->updateOrCreate([
                 'title' => $product['title'],
                 'description' => $product['description'],
                 'price' => $product['price'],
